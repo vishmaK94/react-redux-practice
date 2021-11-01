@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import CakeContainer from "./components/CakeContainer";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import HooksCakeContainer from "./components/HooksCakeContainer";
+import IceCreamContainer from "./components/IceCreamContainer";
+import HooksIceCreamContainer from "./components/HooksIceCreamContainer";
+import SconeContainer from "./components/SconeContainer";
+import HooksSconeContainer from "./components/HooksSconeContainer";
+import NewSconeContainer from "./components/NewSconeContainer";
+import HooksNewSconeContainer from "./components/HooksNewSconeContainer";
+import ItemContainer from "./components/ItemContainer";
+import UserContainer from "./components/UserContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <div style={{ 'border': '5px solid black', 'padding': '1rem', backgroundColor: '#c2ffea', margin: '1rem', borderRadius: '1rem' }}>
+          <UserContainer />
+        </div>
+        {/* <div style={{ 'border': '5px solid black', 'padding': '1rem', backgroundColor: '#c2ffea', margin: '1rem', borderRadius: '1rem' }}>
+          <ItemContainer cake />
+          <ItemContainer />
+        </div>
+        <div style={{ 'border': '5px solid black', 'padding': '1rem', backgroundColor: '#c2ffea', margin: '1rem', borderRadius: '1rem' }}>
+          <HooksSconeContainer />
+          <SconeContainer />
+          <HooksIceCreamContainer />
+          <IceCreamContainer />
+          <HooksCakeContainer />
+          <CakeContainer />
+          <HooksNewSconeContainer />
+          <NewSconeContainer />
+        </div> */}
+      </div>
+    </Provider>
   );
 }
 
